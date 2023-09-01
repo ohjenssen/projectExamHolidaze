@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
+import Home from './pages/Home';
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     <>
         <Routes>
             <Route path='/' element={<Layout />}>
-                <Route index element={<div>Home</div>} />
+                <Route index element={<Home />} />
             </Route>
         </Routes>
     </>
