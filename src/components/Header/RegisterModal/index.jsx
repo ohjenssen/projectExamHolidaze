@@ -11,7 +11,7 @@ function RegisterModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className='m-1 shadow'>Register</Button>
+      <Button variant="primary" onClick={handleShow} className='m-1 shadow btn-pink'>Register</Button>
 
       <Modal className='modal-dialog modal-dialog-centered' show={show} onHide={handleClose}>
         <Modal.Header closeButton>

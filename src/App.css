@@ -1,3 +1,7 @@
+/* Buttons  */
+.btn-pink {
+    background-color: red;
+}
 
 /* Header  */
 .logo {
@@ -13,6 +17,8 @@
 .holidaze-cards {
     width: 300px;
     border: none;
+    margin-bottom: 10rem;
+    border-radius: 5px;
 }
 
 .card-top {
@@ -46,19 +52,13 @@
 
 }
 
-/* display: grid;
-    grid-template: auto auto / repeat(4, 1fr);
-    gap: 2rem;
-    margin: 1rem;
+.card-link {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+}
 
-    @media (max-width: 1100px) {
-        grid-template: auto auto / repeat(3, 1fr);
-    }
-
-    @media (max-width: 800px){
-        grid-template: auto auto / repeat(2, 1fr);
-    }
-
-    @media (max-width: 550px){
-        grid-template: auto auto / repeat(1, 1fr);
-    } */
+.card-link:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

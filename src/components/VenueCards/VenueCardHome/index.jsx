@@ -1,12 +1,14 @@
 import { Card } from "react-bootstrap";
 import Col from 'react-bootstrap/Col';
 import PlaceholderImage from '../../../assets/No-Image-Placeholder.svg.png';
+import { Link } from "react-router-dom";
 
 export default function VenueCardHome({name, price, rating, country, city, media}){
     console.log(media[0])
     return(
-        <Col className='d-flex flex-column align-items-center justify-content-center'>
+        <Col className='d-flex flex-column align-items-center justify-content-center card-column'>
             <Card className="holidaze-cards">
+            <Link className="card-link">
                 <div className="venue-img-container" >
                     <Card.Img variant="top" className="venue-img" src={media[0] ? media[0] : PlaceholderImage} />
                 </div>
@@ -23,8 +25,9 @@ export default function VenueCardHome({name, price, rating, country, city, media
                     <Card.Text>
                         {city}, {country}
                     </Card.Text>
-                        <h2>{price}kr</h2>
+                        <h3>{price}kr</h3>
                 </Card.Body>
+            </Link>
             </Card>
         </Col>
     )
