@@ -1,3 +1,4 @@
+// Source: https://www.npmjs.com/package/@amir04lm26/react-modern-calendar-date-picker
 import '../../../node_modules/@amir04lm26/react-modern-calendar-date-picker/lib/DatePicker.css';
 import { useState, useEffect } from 'react';
 import { Calendar, utils } from '@amir04lm26/react-modern-calendar-date-picker';
@@ -8,8 +9,6 @@ export default function MyDatePicker({ bookings}) {
         from: null,
         to: null
     });
-
-    console.log(selectedDayRange);
 
     const [disabledDays, setDisabledDays] = useState([]);
 

@@ -59,6 +59,25 @@ export default function OtherVenueSpecific(){
                             <h4>Dates</h4>
                             <a>See bookings</a>
                             <MyDatePicker bookings={data.bookings}/>
+                            <h4>Description</h4>
+                            <p>{data.description}</p>
+                            {data.meta &&
+                                <div>
+                                    <p>Breakfast: {data.meta.breakfast ? 'Yes' : 'No'}</p>
+                                    <p>Parking {data.meta.parking ? 'Yes' : 'No'}</p>
+                                    <p>Pets: {data.meta.pets ? 'Yes' : 'No'}</p>
+                                    <p>Wifi: {data.meta.wifi ? 'Yes' : 'No'}</p>
+                                </div>
+                            }
+                            <h4>Location</h4>
+                            {data.location &&
+                                <div>
+                                    <p>Adress: {data.location.address}</p>
+                                    <p>Zip: {data.location.zip}</p>
+                                    <p>City: {data.location.city}</p>
+                                    <p>Country: {data.location.country}</p>
+                                </div>
+                            }
                         </Col>
                     </Row>
                 </>
