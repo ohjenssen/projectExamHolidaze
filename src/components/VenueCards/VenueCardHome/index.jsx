@@ -3,12 +3,12 @@ import Col from 'react-bootstrap/Col';
 import PlaceholderImage from '../../../assets/No-Image-Placeholder.svg.png';
 import { Link } from "react-router-dom";
 
-export default function VenueCardHome({name, price, rating, country, city, media}){
-    console.log(media[0])
+export default function VenueCardHome({id, name, price, rating, country, city, media}){
+
     return(
         <Col className='d-flex flex-column align-items-center justify-content-center card-column'>
             <Card className="holidaze-cards">
-            <Link className="card-link">
+            <Link to={`/venue/${id}`} className="card-link">
                 <div className="venue-img-container" >
                     <Card.Img variant="top" className="venue-img" src={media[0] ? media[0] : PlaceholderImage} />
                 </div>
