@@ -1,3 +1,11 @@
+:root {
+    --main-green: #335F33;
+}
+
+body {
+    min-height: 120vh;
+}
+
 /* Buttons  */
 .btn-pink {
     background-color: red;
@@ -13,7 +21,7 @@
     margin-top: 10rem;
 }
 
-/* Venue cards */
+/* Venue cards for homepage*/
 .holidaze-cards {
     width: 300px;
     border: none;
@@ -61,4 +69,45 @@
 
 .card-link:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* Venue styling for single venuepage */
+.single-card {
+    margin-top: 10rem;
+}
+
+.carousel {
+    background-color: #b6cab6;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.carousel-image-container {
+    height: 450px;
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.guest-counter {
+    display: flex;
+    align-items: center;
+}
+
+.guest-counter-display {
+    padding: 5px;
+    margin: 0 5px 0 0;
+    border: 1px solid var(--main-green);
+    border-radius: 4px;
+}
+
+.guest-counter-btns {
+    display: flex;
+    flex-direction: column;
 }
