@@ -12,7 +12,11 @@ function NavBar() {
   return (
     <Navbar fixed="top" expand="lg" className="bg-white">
       <Container fluid>
-        <Navbar.Brand href="#"><img src={Logo} className="logo"/></Navbar.Brand>
+        <Navbar.Brand>
+            <Link to="/">
+                <img src={Logo} className="logo"/>
+            </Link>
+            </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
             <Nav className="ms-auto my-2 my-lg-0" navbarScroll >
