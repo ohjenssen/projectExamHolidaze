@@ -6,19 +6,16 @@ import { Container, Row, Col, Spinner } from "react-bootstrap";
 import CarouselSlide from '../../components/CarouselSlide'
 import GuestCounter from '../../components/Counter';
 import Button from 'react-bootstrap/Button';
-import DatePicker from '../../components/DatePicker';
+import MyDatePicker from '../../components/MyDatePicker';
 
 export default function OtherVenueSpecific(){
     const { id } = useParams();
     const url = `${constants.BASE_URL +  constants.VENUES}/${id}?_bookings=true`;
-
     const { data, isLoading, isError } = useApi(url);
-    console.log(data);
     const hasImages = data?.media && data.media.length > 0;
 
     return (
         <Container>
-            
                 {isLoading && <Spinner />}
                 {isError && <div>Uh oh! Error message!</div>}
                 {data && 
@@ -61,12 +58,11 @@ export default function OtherVenueSpecific(){
                         <Col className="single-card">
                             <h4>Dates</h4>
                             <a>See bookings</a>
-                            <DatePicker />
+                            <MyDatePicker bookings={data.bookings}/>
                         </Col>
                     </Row>
                 </>
             }
-
         </Container>
     )
 }

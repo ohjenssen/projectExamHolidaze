@@ -11,9 +11,9 @@ function CarouselSlide({media}) {
     return (
         <Carousel activeIndex={index} onSelect={handleSelect}>
             {media && media.map((imgSrc) => (
-                <Carousel.Item>
+                <Carousel.Item key={imgSrc}>
                     <div className='carousel-image-container'>
-                        <img src={imgSrc} key={imgSrc} className='carousel-image'/>
+                        <img src={imgSrc} className='carousel-image'/>
                     </div>
                 </Carousel.Item>
             ))}
