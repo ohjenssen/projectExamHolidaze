@@ -16,6 +16,7 @@ export default function Home(){
                 {data.map((venue) => (
                         <VenueCardHome 
                             key={venue.id} 
+                            id={venue.id}
                             name={venue.name}
                             price={venue.price}
                             rating={venue.rating}
