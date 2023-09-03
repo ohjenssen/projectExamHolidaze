@@ -6,9 +6,11 @@ export default function Layout(){
     return (
     <>
         <Header />
+        <body>
         <Container>
             <Outlet />
         </Container>
+        </body>
     </>
     )
 }
