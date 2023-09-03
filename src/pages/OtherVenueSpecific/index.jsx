@@ -6,6 +6,7 @@ import { Container, Row, Col, Spinner } from "react-bootstrap";
 import CarouselSlide from '../../components/CarouselSlide'
 import GuestCounter from '../../components/Counter';
 import Button from 'react-bootstrap/Button';
+import DatePicker from '../../components/DatePicker';
 
 export default function OtherVenueSpecific(){
     const { id } = useParams();
@@ -60,6 +61,7 @@ export default function OtherVenueSpecific(){
                         <Col className="single-card">
                             <h4>Dates</h4>
                             <a>See bookings</a>
+                            <DatePicker />
                         </Col>
                     </Row>
                 </>
