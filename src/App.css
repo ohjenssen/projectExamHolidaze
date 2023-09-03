@@ -6,6 +6,11 @@ body {
     min-height: 120vh;
 }
 
+p {
+    padding: 0;
+    margin: 0;
+}
+
 /* Buttons  */
 .btn-pink {
     background-color: red;
@@ -76,6 +81,17 @@ body {
     margin-top: 10rem;
 }
 
+.venue-information-container-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.venue-information-booking {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .carousel {
     background-color: #b6cab6;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -95,19 +111,40 @@ body {
     margin-bottom: 10px;
 }
 
+/* Guest counter */
+.guests-container {
+    display: flex;
+    align-items: center;
+}
+
+.guests-container p {
+    margin: 0 10px 0 0;
+}
+
 .guest-counter {
     display: flex;
     align-items: center;
 }
 
 .guest-counter-display {
+    width: 40px;
+    text-align: center;
     padding: 5px;
     margin: 0 5px 0 0;
-    border: 1px solid var(--main-green);
+    border: 1.5px solid var(--main-green);
     border-radius: 4px;
+    color: var(--main-green);
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 }
 
 .guest-counter-btns {
     display: flex;
     flex-direction: column;
+}
+
+.guest-counter-plus, .guest-counter-minus {
+    background-color: white;
+    border: none;
+    color: var(--main-green);
 }
