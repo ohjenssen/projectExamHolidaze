@@ -3,4 +3,5 @@ export const constants = {
     LOGIN: '/holidaze/auth/login',
     REGISTER: '/holidaze/auth/register',
     VENUES: '/holidaze/venues',
+    BOOKINGS: '/holidaze/bookings',
 }

@@ -3,7 +3,7 @@ import '../../../node_modules/@amir04lm26/react-modern-calendar-date-picker/lib/
 import { useState, useEffect } from 'react';
 import { Calendar, utils } from '@amir04lm26/react-modern-calendar-date-picker';
 
-export default function MyDatePicker({ bookings}) {
+export default function MyDatePicker({ bookings, onSelectDate}) {
 
     const [selectedDayRange, setSelectedDayRange] = useState({
         from: null,
@@ -40,7 +40,10 @@ export default function MyDatePicker({ bookings}) {
     return (
         <Calendar
             value={selectedDayRange}
-            onChange={setSelectedDayRange}
+            onChange={(selectedDate) => {
+                setSelectedDayRange(selectedDate);
+                onSelectDate(selectedDate)
+            }}
             inputPlaceholder='Select a day'
             shouldHighlightWeekends
             minimumDate={utils().getToday()}
