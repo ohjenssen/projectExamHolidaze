@@ -1,7 +1,6 @@
-import { Card } from "react-bootstrap";
-import Col from 'react-bootstrap/Col';
-import PlaceholderImage from '../../../assets/No-Image-Placeholder.svg.png';
 import { Link } from "react-router-dom";
+import { Card, Col } from "react-bootstrap";
+import PlaceholderImage from '../../../assets/No-Image-Placeholder.svg.png';
 
 export default function VenueCardHome({id, name, price, rating, country, city, media}){
 

@@ -1,9 +1,6 @@
 import { constants } from '../../../js/constants';
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Alert from 'react-bootstrap/Alert';
-import Spinner from 'react-bootstrap/Spinner';
+import { Button, Form, Alert, Spinner } from 'react-bootstrap';
 
 function RegisterForm() {
     const url = constants.BASE_URL + constants.REGISTER;
