@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import BookingForm from '../Forms/BookingForm';
+import { Modal, Button } from 'react-bootstrap';
 
 export default function BookingModal({handleSubmit}) {
   const [show, setShow] = useState(false);
@@ -17,7 +16,7 @@ export default function BookingModal({handleSubmit}) {
 
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Book this venue?</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <BookingForm handleSubmit={handleSubmit}/>
