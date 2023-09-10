@@ -174,7 +174,24 @@ p {
     color: var(--main-green);
 }
 
+/* Profile page */
 .profile-page {
     justify-content: center;
     margin-top: 8rem;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-edit-btn {
+    background-color: white;
+    border: none;
+    color: var(--main-green);
+}
+
+.profile-edit-btn:hover {
+    color: white;
+    background-color: var(--main-green);
 }
