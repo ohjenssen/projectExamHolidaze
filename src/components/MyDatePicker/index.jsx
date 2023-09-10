@@ -24,7 +24,7 @@ export default function MyDatePicker({ bookings, onSelectDate}) {
                     dateRange.push({
                         year: currentDate.getFullYear(),
                         month: currentDate.getMonth() + 1,
-                        day: currentDate.getDate(),
+                        day: currentDate.getDate() - 1,
                     });
 
                     currentDate.setDate(currentDate.getDate() + 1);
