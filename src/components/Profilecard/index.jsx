@@ -1,14 +1,15 @@
-import { Button, Card, Form, Modal } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { constants } from '../../js/constants';
 import useGetProfile from "../../hooks/useGetProfile";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import BecomeVenuemanager from "../Forms/BecomeVenueManager";
+import EditAvatarForm from "../Forms/EditAvatarForm";
 
 export default function Profilecard(){
     const { profilename } = useParams();
     const url = `${constants.BASE_URL}${constants.PROFILES}/${profilename}`;
     const { profile } = useGetProfile(url);
+    const isManager = JSON.parse(localStorage.getItem('venueManager'));
 
     return (
         <Card style={{ width: '18rem' }}>
@@ -25,7 +26,7 @@ export default function Profilecard(){
                 </Card.Text>
                 <BecomeVenuemanager />
                 <Card.Img variant="top" src={profile.avatar} />
-                <p>Edit avatar</p>
+                <EditAvatarForm />
             </Card.Body>
         </Card>
     )
