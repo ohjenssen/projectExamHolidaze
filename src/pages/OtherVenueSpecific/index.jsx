@@ -5,10 +5,9 @@ import { useParams } from "react-router-dom";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import CarouselSlide from '../../components/CarouselSlide'
 import GuestCounter from '../../components/Counter';
-import Button from 'react-bootstrap/Button';
 import MyDatePicker from '../../components/MyDatePicker';
 import BookingModal from '../../components/BookingModal';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function OtherVenueSpecific(){
     const { id } = useParams();

@@ -2,7 +2,7 @@
     --main-green: #335F33;
 }
 
-body {
+.container {
     min-height: 120vh;
 }
 
@@ -172,4 +172,9 @@ p {
     background-color: white;
     border: none;
     color: var(--main-green);
+}
+
+.profile-page {
+    justify-content: center;
+    margin-top: 8rem;
 }

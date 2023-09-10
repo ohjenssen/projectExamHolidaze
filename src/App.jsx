@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './pages/Home';
+import Profilepage from './pages/Profilepage';
 import OtherVenueSpecific from './pages/OtherVenueSpecific';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Route path='/' element={<Layout />}>
                 <Route index element={<Home />} />
                 <Route path='venue/:id' element={<OtherVenueSpecific />} />
+                <Route path='profilepage/:profilename' element={<Profilepage />}/>
             </Route>
         </Routes>
     </>

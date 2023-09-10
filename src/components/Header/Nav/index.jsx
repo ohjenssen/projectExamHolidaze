@@ -41,7 +41,9 @@ function NavBar() {
                     {accessToken ? 
                         <>
                             <Button>Holidaze Your Space</Button>
-                            <ProfileIcon />
+                            <Link to={`/profilepage/${JSON.parse(localStorage.getItem("profileName"))}`}>
+                                <ProfileIcon />
+                            </Link>
                             <Button onClick={logout}>Log out</Button>
                         </> :
                         <>

@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function useBookvenue(url, ){
-    const [reservation, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
+    const [reservation, setReservation] = useState([]);
 
     const options = {
         method: "POST",
@@ -23,7 +21,9 @@ export default function useBookvenue(url, ){
                 setIsLoading(true);
                 const response = await fetch(url, options);
                 const json = await response.json(response);
-                setData(json);
+                console.log(response);
+                console.log(json);
+                setReservation(json);
             } catch(error) {
                 console.log(error);
             }

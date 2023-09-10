@@ -1,8 +1,7 @@
 import useApi from '../../hooks/useApi';
 import { constants } from '../../js/constants';
+import { Container, Spinner, Row } from 'react-bootstrap';
 import VenueCardHome from '../../components/VenueCards/VenueCardHome';
-import { Container, Spinner } from 'react-bootstrap';
-import Row from 'react-bootstrap/Row';
 
 export default function Home(){
     const url = constants.BASE_URL + constants.VENUES;

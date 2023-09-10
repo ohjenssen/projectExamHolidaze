@@ -42,6 +42,7 @@ function LoginForm(){
                 localStorage.setItem("accessToken", JSON.stringify(json.accessToken));
                 localStorage.setItem("avatar", JSON.stringify(json.avatar));
                 localStorage.setItem("venueManager", JSON.stringify(json.venueManager));
+                localStorage.setItem("profileName", JSON.stringify(json.name));
                 window.location.reload();
             } else {
                 setIsLoading(false);
