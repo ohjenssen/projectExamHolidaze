@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export default function Profilecard(){
-    const url = `${constants.BASE_URL}${constants.PROFILES}/${JSON.parse(localStorage.getItem('profileName'))}`;
+    const { profilename } = useParams();
+    const url = `${constants.BASE_URL}${constants.PROFILES}/${profilename}`;
     const { profile } = useGetProfile(url);
 
     return (
