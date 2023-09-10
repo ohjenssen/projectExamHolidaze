@@ -51,7 +51,7 @@ export default function OtherVenueSpecific(){
         try {
             const response = await fetch(bookUrl, options);
             if(response.ok){
-                window.location.reload();
+                window.location.replace('/');
             }
         } catch(error) {
             console.log(error);
