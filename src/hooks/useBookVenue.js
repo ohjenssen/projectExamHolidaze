@@ -21,8 +21,6 @@ export default function useBookvenue(url, ){
                 setIsLoading(true);
                 const response = await fetch(url, options);
                 const json = await response.json(response);
-                console.log(response);
-                console.log(json);
                 setReservation(json);
             } catch(error) {
                 console.log(error);

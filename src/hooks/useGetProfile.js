@@ -17,7 +17,6 @@ export default function useGetProfile(url){
                 const response = await fetch(url, options);
                 const json = await response.json(response);
                 setProfile(json);
-                console.log(json);
             } catch(error) {
                 console.log(error);
             }
