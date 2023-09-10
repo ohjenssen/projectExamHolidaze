@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 export default function Profilecard(){
     const { profilename } = useParams();
+    console.log(profilename);
     const url = `${constants.BASE_URL}${constants.PROFILES}/${profilename}`;
     const { profile } = useGetProfile(url);
 
