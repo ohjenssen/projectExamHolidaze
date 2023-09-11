@@ -59,9 +59,21 @@ p {
     border-radius: 5px;
 }
 
+.holidaze-cards:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .card-top {
     display: flex;
     justify-content: space-between;
+}
+
+.venue-title {
+    margin-bottom: 0px;
+}
+
+.venue-adress {
+    margin-bottom: 10px;
 }
 
 .venue-img-container {
@@ -95,10 +107,6 @@ p {
     padding: 10px;
     color: black;
     border-radius: 5px;
-}
-
-.card-link:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 /* Venue styling for single venuepage */
@@ -176,8 +184,21 @@ p {
 
 /* Profile page */
 .profile-page {
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin-top: 8rem;
+}
+
+.profile-nav-links {
+    width: 200px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-nav-links a{
+    color: red;
 }
 
 .profile-info {
@@ -194,4 +215,21 @@ p {
 .profile-edit-btn:hover {
     color: white;
     background-color: var(--main-green);
+}
+
+/* Bookings page  */
+.venue-btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.venue-btn-container button {
+    border: none;
+    color: var(--main-green);
+    background-color: white;
+}
+
+.venue-btn-container button:hover {
+    background-color: white;
+    color: var(--main-green);
 }
