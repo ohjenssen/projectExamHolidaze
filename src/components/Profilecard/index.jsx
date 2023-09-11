@@ -9,7 +9,6 @@ export default function Profilecard(){
     const { profilename } = useParams();
     const url = `${constants.BASE_URL}${constants.PROFILES}/${profilename}`;
     const { profile } = useGetProfile(url);
-    const isManager = JSON.parse(localStorage.getItem('venueManager'));
 
     return (
         <Card style={{ width: '18rem' }}>

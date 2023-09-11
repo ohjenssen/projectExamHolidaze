@@ -4,7 +4,6 @@ import { Modal, Button } from 'react-bootstrap';
 
 export default function BookingModal({handleSubmit}) {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
