@@ -5,6 +5,7 @@ import Layout from './Layout';
 import Home from './pages/Home';
 import Profilepage from './pages/Profilepage';
 import OtherVenueSpecific from './pages/OtherVenueSpecific';
+import MyBookingsPage from './pages/MyBookingsPage';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path='venue/:id' element={<OtherVenueSpecific />} />
                 <Route path='profilepage/:profilename' element={<Profilepage />}/>
+                <Route path='mybookings/:profilename' element={<MyBookingsPage />}/>
             </Route>
         </Routes>
     </>
