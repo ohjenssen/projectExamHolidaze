@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Profilepage from './pages/Profilepage';
 import OtherVenueSpecific from './pages/OtherVenueSpecific';
 import MyBookingsPage from './pages/MyBookingsPage';
+import UserVenues from './pages/UserVenues';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
                 <Route path='venue/:id' element={<OtherVenueSpecific />} />
                 <Route path='profilepage/:profilename' element={<Profilepage />}/>
                 <Route path='mybookings/:profilename' element={<MyBookingsPage />}/>
+                <Route path='uservenues/:profilename' element={<UserVenues/>} />
             </Route>
         </Routes>
     </>
