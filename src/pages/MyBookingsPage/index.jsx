@@ -25,7 +25,7 @@ export default function MyBookingsPage(){
                     <div className='profile-nav-links'>
                         <Link to={`/profilepage/${JSON.parse(localStorage.getItem("profileName"))}`}>Profile</Link>
                         <Link to={`/mybookings/${JSON.parse(localStorage.getItem('profileName'))}`}>Bookings</Link>
-                       {isManager && <Link>Venues</Link>}
+                        {isManager && <Link to={`/uservenues/${JSON.parse(localStorage.getItem('profileName'))}`}>Venues</Link>}
                     </div>
                     <h1>These are your bookings</h1>
                 </Col>
