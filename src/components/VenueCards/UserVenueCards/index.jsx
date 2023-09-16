@@ -34,7 +34,6 @@ export default function UserVenueCards({venue}){
                     
                     <DeleteVenue id={venue.id}/>
                 </div>
-                <Button>View bookings</Button>
             </Card>
         </Col>
 )
