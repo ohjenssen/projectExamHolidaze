@@ -1,4 +1,4 @@
-import { Container, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { constants } from '../../js/constants';
 import useGetBookingsByProfile from '../../hooks/useGetBookingsByProfile';
