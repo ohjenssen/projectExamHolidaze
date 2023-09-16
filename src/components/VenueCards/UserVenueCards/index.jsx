@@ -1,13 +1,10 @@
 import { Col, Card, Modal, Form, Button} from 'react-bootstrap';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import DeleteVenue from '../../DeleteVenue';
+import UpdateVenue from '../../UpdateVenue';
 import PlaceholderImage from '../../../assets/No-Image-Placeholder.svg.png';
 
 export default function UserVenueCards({venue}){
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     return (
         <Col className='d-flex flex-column align-items-center justify-content-center card-column'>
@@ -32,10 +29,12 @@ export default function UserVenueCards({venue}){
                     </Card.Body>
                 </Link>
                 <div className="venue-btn-container">
-                    <Button className="update-btn">Update</Button>
+                    {/* <Button className="update-btn">Update</Button> */}
+                    <UpdateVenue venue={venue}/>
                     
                     <DeleteVenue id={venue.id}/>
                 </div>
+                <Button>View bookings</Button>
             </Card>
         </Col>
 )

@@ -7,9 +7,10 @@ export default function MyVenues(){
 
     return (
         <>
+            {isLoading && <p>Loading...</p>}
             {data && 
                 data.map((venue) => (
-                    <UserVenueCards venue={venue}/>
+                    <UserVenueCards key={venue.id} venue={venue}/>
             ))}
         </>
     )
