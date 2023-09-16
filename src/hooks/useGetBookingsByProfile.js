@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useApi(url, options){
+export default function useGetBookingsByProfile(url, options){
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
