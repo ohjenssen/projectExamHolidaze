@@ -68,6 +68,10 @@ p {
     justify-content: space-between;
 }
 
+.card-body {
+    padding: 5px 0 0 0;
+}
+
 .venue-title {
     margin-bottom: 0px;
 }
