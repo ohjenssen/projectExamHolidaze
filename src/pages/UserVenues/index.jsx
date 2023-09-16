@@ -2,6 +2,7 @@ import { Row, Col, Button, Modal, Form } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { constants } from "../../js/constants";
+import MyVenues from "../../components/MyVenues";
 
 export default function UserVenues(){
     const [show, setShow] = useState(false);
@@ -94,6 +95,7 @@ export default function UserVenues(){
     }
 
     return (
+        <>
         <Row>
             <Col className='profile-page'>
                 <div className='profile-nav-links'>
@@ -105,8 +107,13 @@ export default function UserVenues(){
                     Add venue
                 </Button>
                 <h1>These are your venues</h1>
+            </Col>
+        </Row>
 
-                <Modal show={show} onHide={handleClose}>
+        <Row className="d-flex">
+                <MyVenues />
+        </Row>
+        <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Create venue</Modal.Title>
                     </Modal.Header>
@@ -277,8 +284,6 @@ export default function UserVenues(){
                         </Button>
                     </Modal.Footer>
                 </Modal>
-
-            </Col>
-        </Row>
+        </>
     )
 }
