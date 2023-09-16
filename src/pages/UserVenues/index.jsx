@@ -220,7 +220,7 @@ export default function UserVenues(){
                                 <Form.Control 
                                     type="text" 
                                     placeholder="Enter adress" 
-                                    name="adress"
+                                    name="address"
                                     value={location.adress}
                                     onChange={changeLocationHandler}
                                 />
