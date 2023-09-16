@@ -11,7 +11,7 @@ export default function Profilecard(){
     const { profile } = useGetProfile(url);
 
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem', border: 'none'}}>
             <Card.Body>
                 <Card.Title>{profile.name}</Card.Title>
                 <Card.Text>
