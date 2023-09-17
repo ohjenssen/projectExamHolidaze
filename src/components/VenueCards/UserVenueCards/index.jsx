@@ -1,7 +1,8 @@
-import { Col, Card, Modal, Form, Button} from 'react-bootstrap';
+import { Col, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import DeleteVenue from '../../DeleteVenue';
 import UpdateVenue from '../../UpdateVenue';
+import ViewVenueBookings from '../../ViewVenueBookings';
 import PlaceholderImage from '../../../assets/No-Image-Placeholder.svg.png';
 
 export default function UserVenueCards({venue}){
@@ -29,7 +30,9 @@ export default function UserVenueCards({venue}){
                     </Card.Body>
                 </Link>
                 <div className="venue-btn-container">
-                    {/* <Button className="update-btn">Update</Button> */}
+                    <ViewVenueBookings id={venue.id} name={venue.name}/>
+                </div>
+                <div className="venue-btn-container">
                     <UpdateVenue venue={venue}/>
                     
                     <DeleteVenue id={venue.id}/>
