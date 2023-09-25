@@ -25,7 +25,7 @@ export default function SearchAndFilterbar(){
 
     return (
         <>
-            <Form className="d-flex m-1 shadow rounded-2 search-form" onSubmit={handleSubmit}>
+            <Form className="d-flex m-1 rounded-2 search-form" onSubmit={handleSubmit}>
                 <Form.Control 
                     type="text" 
                     id="search-bar" 
