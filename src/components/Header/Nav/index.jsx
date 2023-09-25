@@ -5,13 +5,15 @@ import Logo from '../../../assets/Holidaze-logo-without-slogan.png';
 import LoginModal from '../LoginModal';
 import RegisterModal from '../RegisterModal';
 import ProfileIcon from '../ProfileIcon';
+import SearchAndFilterbar from '../SearchAndFilterbar';
 
 function NavBar() {
 
     const [accessToken, setAccessToken] = useState(false);
+
     useEffect(() => {
         setAccessToken(JSON.parse(localStorage.getItem('accessToken')))
-    });
+    }, []);
 
     function logout(){
         localStorage.clear();
@@ -29,15 +31,7 @@ function NavBar() {
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
                 <Nav className="ms-auto my-2 my-lg-0" navbarScroll >
-                    <Form className="d-flex m-1 shadow rounded-2">
-                        <Form.Control type="search" id="search-bar" placeholder="Search" className="me-2" aria-label="Search" />
-                    </Form>
-                    <NavDropdown title="Filters" id="navbarScrollingDropdown" className='shadow m-1 rounded p-1'>
-                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
-                    </NavDropdown>
+                    <SearchAndFilterbar />
                     {accessToken ? 
                         <>
                             <Button>Holidaze Your Space</Button>
