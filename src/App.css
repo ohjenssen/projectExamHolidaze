@@ -94,6 +94,10 @@ a {
     color: white;
 }
 
+.custom-header-btn {
+    max-width: 200px;
+}
+
 /* Homepage  */
 .holidaze-cards-container {
     margin-top: 10rem;

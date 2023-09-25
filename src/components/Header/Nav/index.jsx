@@ -34,11 +34,11 @@ function NavBar() {
                     <SearchAndFilterbar />
                     {accessToken ? 
                         <>
-                            <Button>Holidaze Your Space</Button>
+                            <Button className='m-1 custom-header-btn'>Holidaze Your Space</Button>
                             <Link to={`/profilepage/${JSON.parse(localStorage.getItem("profileName"))}`}>
                                 <ProfileIcon />
                             </Link>
-                            <Button onClick={logout}>Log out</Button>
+                            <Button onClick={logout} className='m-1 custom-header-btn'>Log out</Button>
                         </> :
                         <>
                             <LoginModal />
