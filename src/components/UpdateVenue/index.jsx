@@ -91,160 +91,165 @@ export default function UpdateVenue({venue}){
                         <Modal.Title>Update venue</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Form onSubmit={handleSubmit}>
-                            <Form.Group className="mb-3" controlId="formTitle">
-                                <Form.Label>Venue Title *</Form.Label>
-                                <Form.Control 
-                                    type="text" 
-                                    placeholder="Enter title" 
-                                    name="name"
-                                    value={name}
-                                    onChange={changeHandler}
-                                />
-                            </Form.Group>
+                        <Form onSubmit={handleSubmit} className="custom-form">
 
-                            <Form.Group className="mb-3" controlId="formDescription">
-                                <Form.Label>Description *</Form.Label>
-                                <Form.Control 
-                                    as="textarea" 
-                                    placeholder="Enter description" 
-                                    name="description"
-                                    value={description}
-                                    onChange={changeHandler}
-                                />
-                            </Form.Group>
+                            <div className="input-container">
+                                <Form.Group className="mb-3" controlId="formTitle">
+                                    <Form.Label>Venue Title *</Form.Label>
+                                    <Form.Control 
+                                        type="text" 
+                                        placeholder="Enter title" 
+                                        name="name"
+                                        value={name}
+                                        onChange={changeHandler}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formGuests">
-                                <Form.Label>Max guests *</Form.Label>
-                                <Form.Control 
-                                    type="number" 
-                                    placeholder="Enter max guests" 
-                                    name="maxGuests"
-                                    value={maxGuests}
-                                    onChange={changeHandler}
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formDescription">
+                                    <Form.Label>Description *</Form.Label>
+                                    <Form.Control 
+                                        as="textarea" 
+                                        placeholder="Enter description" 
+                                        name="description"
+                                        value={description}
+                                        onChange={changeHandler}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formPrice">
-                                <Form.Label>Enter price *</Form.Label>
-                                <Form.Control 
-                                    type="number" 
-                                    placeholder="Enter price"
-                                    name="price"
-                                    value={price}
-                                    onChange={changeHandler} 
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formGuests">
+                                    <Form.Label>Max guests *</Form.Label>
+                                    <Form.Control 
+                                        type="number" 
+                                        placeholder="Enter max guests" 
+                                        name="maxGuests"
+                                        value={maxGuests}
+                                        onChange={changeHandler}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formWifi">
-                                <Form.Check 
-                                    type="checkbox" 
-                                    label="Wifi" 
-                                    name="wifi"
-                                    checked={meta.wifi}
-                                    onChange={handleCheckBoxChange}
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formPrice">
+                                    <Form.Label>Enter price *</Form.Label>
+                                    <Form.Control 
+                                        type="number" 
+                                        placeholder="Enter price"
+                                        name="price"
+                                        value={price}
+                                        onChange={changeHandler} 
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formParking">
-                                <Form.Check 
-                                    type="checkbox" 
-                                    label="Parking" 
-                                    name="parking"
-                                    checked={meta.parking}
-                                    onChange={handleCheckBoxChange}
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formMedia">
+                                        <Form.Label>Venue images(must be url link)</Form.Label>
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="https://imagelink.com/image"
+                                            value={imageUrl}
+                                            onChange={imageChangeHandler}
+                                        />
+                                        <Button onClick={addImages} className="add-img-btn">Add image</Button>
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formPets">
-                                <Form.Check 
-                                    type="checkbox" 
-                                    label="Pets" 
-                                    name="pets"
-                                    checked={meta.pets}
-                                    onChange={handleCheckBoxChange}
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formWifi">
+                                    <Form.Check 
+                                        type="checkbox" 
+                                        label="Wifi" 
+                                        name="wifi"
+                                        checked={meta.wifi}
+                                        onChange={handleCheckBoxChange}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formBreakfast">
-                                <Form.Check 
-                                    type="checkbox" 
-                                    label="Breakfast" 
-                                    name="breakfast"
-                                    checked={meta.breakfast}
-                                    onChange={handleCheckBoxChange}
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formParking">
+                                    <Form.Check 
+                                        type="checkbox" 
+                                        label="Parking" 
+                                        name="parking"
+                                        checked={meta.parking}
+                                        onChange={handleCheckBoxChange}
+                                    />
+                                </Form.Group>
 
+                                <Form.Group className="mb-3" controlId="formPets">
+                                    <Form.Check 
+                                        type="checkbox" 
+                                        label="Pets" 
+                                        name="pets"
+                                        checked={meta.pets}
+                                        onChange={handleCheckBoxChange}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formMedia">
-                                <Form.Label>Venue images(must be url link)</Form.Label>
-                                <Form.Control 
-                                    type="text" 
-                                    placeholder="https://imagelink.com/image"
-                                    value={imageUrl}
-                                    onChange={imageChangeHandler}
-                                />
-                                <Button onClick={addImages}>Add image</Button>
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formBreakfast">
+                                    <Form.Check 
+                                        type="checkbox" 
+                                        label="Breakfast" 
+                                        name="breakfast"
+                                        checked={meta.breakfast}
+                                        onChange={handleCheckBoxChange}
+                                    />
+                                </Form.Group>
+                                </div>
 
-                            <Form.Group className="mb-3" controlId="formAdress">
-                                <Form.Label>Adress</Form.Label>
-                                <Form.Control 
-                                    type="text" 
-                                    placeholder="Enter adress" 
-                                    name="address"
-                                    value={location.adress}
-                                    onChange={changeLocationHandler}
-                                />
-                            </Form.Group>
+                                <div className="input-container">
+                                    <Form.Group className="mb-3" controlId="formAdress">
+                                        <Form.Label>Adress</Form.Label>
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="Enter adress" 
+                                            name="address"
+                                            value={location.adress}
+                                            onChange={changeLocationHandler}
+                                        />
+                                    </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formCity">
-                                <Form.Label>City</Form.Label>
-                                <Form.Control 
-                                    type="text" 
-                                    placeholder="Enter city" 
-                                    name="city"
-                                    value={location.city}
-                                    onChange={changeLocationHandler}
-                                />
-                            </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formCity">
+                                        <Form.Label>City</Form.Label>
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="Enter city" 
+                                            name="city"
+                                            value={location.city}
+                                            onChange={changeLocationHandler}
+                                        />
+                                    </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formZip">
-                                <Form.Label>Zip</Form.Label>
-                                <Form.Control 
-                                    type="text" 
-                                    placeholder="Enter zip" 
-                                    name="zip"
-                                    value={location.zip}
-                                    onChange={changeLocationHandler}
-                                />
-                            </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formZip">
+                                        <Form.Label>Zip</Form.Label>
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="Enter zip" 
+                                            name="zip"
+                                            value={location.zip}
+                                            onChange={changeLocationHandler}
+                                        />
+                                    </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formCountry">
-                                <Form.Label>Country</Form.Label>
-                                <Form.Control 
-                                    type="text" 
-                                    placeholder="Enter country" 
-                                    name="country"
-                                    value={location.country}
-                                    onChange={changeLocationHandler}
-                                />
-                            </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formCountry">
+                                        <Form.Label>Country</Form.Label>
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="Enter country" 
+                                            name="country"
+                                            value={location.country}
+                                            onChange={changeLocationHandler}
+                                        />
+                                    </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formContinent">
-                                <Form.Label>Continent</Form.Label>
-                                <Form.Control 
-                                    type="text" 
-                                    placeholder="Enter continent" 
-                                    name="continent"
-                                    value={location.continent}
-                                    onChange={changeLocationHandler}
-                                />
-                            </Form.Group>
-                            <Button variant="primary" type="submit">
-                                Update
-                            </Button>
+                                    <Form.Group className="mb-3" controlId="formContinent">
+                                        <Form.Label>Continent</Form.Label>
+                                        <Form.Control 
+                                            type="text" 
+                                            placeholder="Enter continent" 
+                                            name="continent"
+                                            value={location.continent}
+                                            onChange={changeLocationHandler}
+                                        />
+                                    </Form.Group>
+                                    <Button variant="primary" type="submit">
+                                        Update
+                                    </Button>
+                                </div>
+                            
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
