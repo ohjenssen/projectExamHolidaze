@@ -46,6 +46,35 @@ p {
     z-index: 1000;
 }
 
+.search-form {
+    position: relative;
+}
+
+.search-suggestions {
+    top: 45px;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    max-height: 230px;
+    overflow-y: auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-item {
+    border: 1px solid var(--main-green);
+    padding: 10px 0px 10px 10px;
+    text-decoration: none;
+    color: var(--main-green);
+}
+
+.search-item:hover{
+    background-color: var(--main-green);
+    color: white;
+}
+
 /* Homepage  */
 .holidaze-cards-container {
     margin-top: 10rem;
