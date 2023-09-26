@@ -36,7 +36,6 @@ export default function EditAvatarForm(){
                 localStorage.setItem('avatar', JSON.stringify(avatarUrl));
                 window.location.reload();
             }
-
         } catch(error){
             console.log(error);
         }
@@ -44,7 +43,7 @@ export default function EditAvatarForm(){
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button className="mt-3" onClick={handleShow}>
                 Edit avatar
             </Button>
 

@@ -73,7 +73,7 @@ export default function BecomeVenuemanager(){
                     </div> 
                     :
                     <>
-                        <Button variant="primary" onClick={handleShow}>
+                        <Button variant="primary" className="btn-pink" onClick={handleShow}>
                             Become venuemanager
                         </Button>
 
