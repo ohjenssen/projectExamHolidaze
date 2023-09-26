@@ -149,46 +149,51 @@ export default function UpdateVenue({venue}){
                                         <Button onClick={addImages} className="add-img-btn">Add image</Button>
                                 </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="formWifi">
-                                    <Form.Check 
-                                        type="checkbox" 
-                                        label="Wifi" 
-                                        name="wifi"
-                                        checked={meta.wifi}
-                                        onChange={handleCheckBoxChange}
-                                    />
-                                </Form.Group>
+                                <div className="form-checks">
+                                    <div>
+                                        <Form.Group className="mb-3" controlId="formWifi">
+                                            <Form.Check 
+                                                type="checkbox" 
+                                                label="Wifi" 
+                                                name="wifi"
+                                                checked={meta.wifi}
+                                                onChange={handleCheckBoxChange}
+                                            />
+                                        </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="formParking">
-                                    <Form.Check 
-                                        type="checkbox" 
-                                        label="Parking" 
-                                        name="parking"
-                                        checked={meta.parking}
-                                        onChange={handleCheckBoxChange}
-                                    />
-                                </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formParking">
+                                            <Form.Check 
+                                                type="checkbox" 
+                                                label="Parking" 
+                                                name="parking"
+                                                checked={meta.parking}
+                                                onChange={handleCheckBoxChange}
+                                            />
+                                        </Form.Group>
+                                    </div>
+                                    <div>
+                                        <Form.Group className="mb-3" controlId="formPets">
+                                            <Form.Check 
+                                                type="checkbox" 
+                                                label="Pets" 
+                                                name="pets"
+                                                checked={meta.pets}
+                                                onChange={handleCheckBoxChange}
+                                            />
+                                        </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="formPets">
-                                    <Form.Check 
-                                        type="checkbox" 
-                                        label="Pets" 
-                                        name="pets"
-                                        checked={meta.pets}
-                                        onChange={handleCheckBoxChange}
-                                    />
-                                </Form.Group>
-
-                                <Form.Group className="mb-3" controlId="formBreakfast">
-                                    <Form.Check 
-                                        type="checkbox" 
-                                        label="Breakfast" 
-                                        name="breakfast"
-                                        checked={meta.breakfast}
-                                        onChange={handleCheckBoxChange}
-                                    />
-                                </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formBreakfast">
+                                            <Form.Check 
+                                                type="checkbox" 
+                                                label="Breakfast" 
+                                                name="breakfast"
+                                                checked={meta.breakfast}
+                                                onChange={handleCheckBoxChange}
+                                            />
+                                        </Form.Group>
+                                    </div>
                                 </div>
+                            </div>
 
                                 <div className="input-container">
                                     <Form.Group className="mb-3" controlId="formAdress">
@@ -245,7 +250,7 @@ export default function UpdateVenue({venue}){
                                             onChange={changeLocationHandler}
                                         />
                                     </Form.Group>
-                                    <Button variant="primary" type="submit">
+                                    <Button className="btn-pink" type="submit">
                                         Update
                                     </Button>
                                 </div>

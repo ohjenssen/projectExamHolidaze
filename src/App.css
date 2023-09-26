@@ -1,5 +1,6 @@
 :root {
     --main-green: #335F33;
+    --main-pink: #BD6691;
 }
 
 .container {
@@ -32,7 +33,12 @@ a {
 }
 
 .btn-pink {
-    background-color: red;
+    background-color: var(--main-pink);
+    width: 100%;
+}
+
+.btn-pink:hover {
+    background-color: #b04279;
 }
 
 /* Header  */

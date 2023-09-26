@@ -263,8 +263,8 @@ export default function AddVenues(){
                                     />
                                 </Form.Group>
 
-                                <Button variant="primary" type="submit">
-                                    Submit
+                                <Button className="btn-pink" type="submit">
+                                    Create
                                 </Button>
                             </div>
 
