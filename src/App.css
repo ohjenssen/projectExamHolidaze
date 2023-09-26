@@ -1,3 +1,5 @@
+@import url('https://use.typekit.net/xgy8ihn.css');
+
 :root {
     --main-green: #335F33;
     --main-pink: #BD6691;
@@ -9,12 +11,14 @@
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--main-green);
+    font-family: 'mundial', sans-serif;
 }
 
 p {
     padding: 0;
     margin: 0;
     color: var(--main-green);
+    font-family: 'mundial', sans-serif;
 }
 
 a {
