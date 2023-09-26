@@ -2,7 +2,7 @@ import { useState } from 'react';
 import BookingForm from '../Forms/BookingForm';
 import { Modal, Button } from 'react-bootstrap';
 
-export default function BookingModal({handleSubmit}) {
+export default function BookingModal({errorMessage, handleSubmit}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -18,7 +18,7 @@ export default function BookingModal({handleSubmit}) {
                 <Modal.Title>Book this venue?</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <BookingForm handleSubmit={handleSubmit}/>
+                <BookingForm errorMessage={errorMessage} handleSubmit={handleSubmit}/>
             </Modal.Body>
         </Modal>
     </>

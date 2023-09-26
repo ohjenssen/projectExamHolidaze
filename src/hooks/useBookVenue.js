@@ -1,32 +1,34 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
-export default function useBookvenue(url, ){
-    const [reservation, setReservation] = useState([]);
+// export default function useBookvenue(url, ){
+//     const [reservation, setReservation] = useState([]);
 
-    const options = {
-        method: "POST",
-        body: {
-            dateFrom: dateFrom,
-            dateTo: dateTo,
-            guests: guests,
-            venueId: id
-        }
-    }
+//     const options = {
+//         method: "POST",
+//         body: {
+//             dateFrom: dateFrom,
+//             dateTo: dateTo,
+//             guests: guests,
+//             venueId: id
+//         }
+//     }
 
-    setData(options);
+//     setData(options);
 
-    useEffect(() => {
-        async function bookVenue(){
-            try {
-                setIsLoading(true);
-                const response = await fetch(url, options);
-                const json = await response.json(response);
-                setReservation(json);
-            } catch(error) {
-                console.log(error);
-            }
-        }
-        bookVenue();
-    }, [url])
-    return { reservation };
-}
+//     useEffect(() => {
+//         async function bookVenue(){
+//             try {
+//                 setIsLoading(true);
+//                 const response = await fetch(url, options);
+//                 const json = await response.json(response);
+//                 console.log(response);
+//                 console.log(json);
+//                 setReservation(json);
+//             } catch(error) {
+//                 console.log(error);
+//             }
+//         }
+//         bookVenue();
+//     }, [url])
+//     return { reservation };
+// }

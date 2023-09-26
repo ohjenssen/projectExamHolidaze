@@ -18,6 +18,7 @@ export default function OtherVenueSpecific(){
     const [selectedDate, setSelectedDate] = useState(null);
     const [numberOfGuests, setNumberOfGuests] = useState(0);
     const [reservationInfo, setReservationInfo] = useState({});
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -29,6 +30,15 @@ export default function OtherVenueSpecific(){
 
     async function handleSubmit(event){
         event.preventDefault();
+        if(!selectedDate){
+            setErrorMessage('Please select a date for your booking.');
+            return;
+        } else if(!selectedDate.to){
+            setErrorMessage('Please select a date for your trip to end.')
+            return;
+        }
+
+        setErrorMessage('');
         const startDate = new Date(selectedDate.from.year, selectedDate.from.month - 1, selectedDate.from.day).toISOString();
         const endDate = new Date(selectedDate.to.year, selectedDate.to.month - 1, selectedDate.to.day).toISOString();
         
@@ -57,9 +67,11 @@ export default function OtherVenueSpecific(){
           const makeBooking = async () => {
             try {
               const response = await fetch(bookUrl, options);
-              console.log(await response.json());
+              const json = await response.json();
               if (response.ok) {
                 window.location.replace(`/mybookings/${JSON.parse(localStorage.getItem('profileName'))}`);
+              } else if(!response.ok) {
+                setErrorMessage(json.errors[0].message);
               }
             } catch (error) {
               console.log(error);
@@ -105,7 +117,7 @@ export default function OtherVenueSpecific(){
                                         </svg>
                                         <p>{data.rating}</p>
                                     </div>
-                                    <BookingModal handleSubmit={handleSubmit}>Book</BookingModal>
+                                    <BookingModal errorMessage={errorMessage} handleSubmit={handleSubmit}>Book</BookingModal>
                                 </div>
                             </div>
                         </div>
