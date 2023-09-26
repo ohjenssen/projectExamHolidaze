@@ -90,9 +90,9 @@ export default function AddVenues({buttonText}){
             if(response.ok){
                 window.location.reload()
             } else if(!response.ok){
-                setErrorMessage(json.errors);
+                setErrorMessage(json.errors[0].message);
+                console.log(errorMessage);
             }
-            console.log(json);
         } catch(error) {
             console.log(error);
         }
@@ -272,6 +272,9 @@ export default function AddVenues({buttonText}){
                                 <Button className="btn-pink" type="submit">
                                     Create
                                 </Button>
+                                {errorMessage && 
+                                    <h4 className="error-message">{errorMessage}</h4>
+                                }
                             </div>
 
                         </Form>

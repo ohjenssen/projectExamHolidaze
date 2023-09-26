@@ -343,3 +343,7 @@ a {
 .add-img-btn {
     margin-top: 15px;
 }
+
+.error-message {
+    color: red;
+}
