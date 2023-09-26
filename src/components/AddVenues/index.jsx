@@ -8,6 +8,7 @@ export default function AddVenues({buttonText}){
     const handleShow = () => setShow(true);
     const [imageUrl, setImageUrl] = useState("");
     const url = constants.BASE_URL + constants.VENUES;
+    const [errorMessage, setErrorMessage] = useState('');
 
     const [venueInfo, setVenueInfo] = useState({
         name: "",
@@ -86,6 +87,11 @@ export default function AddVenues({buttonText}){
         try {
             const response = await fetch(url, options);
             const json = await response.json();
+            if(response.ok){
+                window.location.reload()
+            } else if(!response.ok){
+                setErrorMessage(json.errors);
+            }
             console.log(json);
         } catch(error) {
             console.log(error);
