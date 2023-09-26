@@ -106,6 +106,7 @@ a {
 
 .custom-header-btn {
     max-width: 200px;
+    white-space: nowrap;
 }
 
 /* Homepage  */

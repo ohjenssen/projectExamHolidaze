@@ -2,7 +2,7 @@ import { constants } from "../../js/constants";
 import { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 
-export default function AddVenues(){
+export default function AddVenues({buttonText}){
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -94,8 +94,8 @@ export default function AddVenues(){
 
     return (
         <>
-             <Button variant="primary" onClick={handleShow}>
-                    Add venue
+             <Button variant="primary" onClick={handleShow} className="m-1 custom-header-btn btn-pink">
+                    {buttonText ? buttonText : 'Add venue'}
             </Button>
 
             <Modal show={show} onHide={handleClose}>

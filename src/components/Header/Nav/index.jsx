@@ -6,6 +6,7 @@ import LoginModal from '../LoginModal';
 import RegisterModal from '../RegisterModal';
 import ProfileIcon from '../ProfileIcon';
 import SearchAndFilterbar from '../SearchAndFilterbar';
+import AddVenues from '../../AddVenues';
 
 function NavBar() {
 
@@ -21,7 +22,7 @@ function NavBar() {
     }
 
     return (
-        <Navbar fixed="top" expand="lg" className="bg-white">
+        <Navbar fixed="top" expand="md" className="bg-white">
         <Container fluid>
             <Navbar.Brand>
                 <Link to="/">
@@ -30,11 +31,11 @@ function NavBar() {
                 </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
-                <Nav className="ms-auto my-2 my-lg-0" navbarScroll >
+                <Nav className="ms-auto my-2 my-md-0" navbarScroll >
                     <SearchAndFilterbar />
                     {accessToken ? 
                         <>
-                            <Button className='m-1 custom-header-btn'>Holidaze Your Space</Button>
+                            <AddVenues buttonText={'Holidaze Your Space'} />
                             <Link to={`/profilepage/${JSON.parse(localStorage.getItem("profileName"))}`}>
                                 <ProfileIcon />
                             </Link>
