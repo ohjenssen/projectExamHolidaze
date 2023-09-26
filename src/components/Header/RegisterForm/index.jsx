@@ -6,7 +6,7 @@ function RegisterForm() {
     const url = constants.BASE_URL + constants.REGISTER;
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
-    const [errorMessage, setErrorMessage] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const [userInfo, setData] = useState({
         name: "",
@@ -39,14 +39,15 @@ function RegisterForm() {
         try {
             const response = await fetch(url, options);
             const json = await response.json();
+            console.log(json);
             setIsLoading(true);
             if (response.ok){
                 setIsLoading(false);
                 setIsError(false);
                 localStorage.setItem("profileInfo", JSON.stringify(json));
-                localStorage.setItem("accessToken", JSON.stringify(json.accessToken));
                 localStorage.setItem("avatar", JSON.stringify(json.avatar));
                 localStorage.setItem("venueManager", JSON.stringify(json.venueManager));
+                localStorage.setItem("profileName", JSON.stringify(json.name));
                 window.location.reload();
             } else {
                 setIsLoading(false);
@@ -114,7 +115,7 @@ function RegisterForm() {
             />
         </Form.Group>
         <Button variant="primary" type="submit">
-            {isLoading ? <Spinner /> : 'Log in'}
+            {isLoading ? <Spinner /> : 'Register'}
         </Button>
         {isError && 
                 <Alert className='mt-3' variant={'danger'}>
