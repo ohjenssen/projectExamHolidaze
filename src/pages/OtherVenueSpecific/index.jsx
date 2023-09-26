@@ -7,7 +7,7 @@ import CarouselSlide from '../../components/CarouselSlide'
 import GuestCounter from '../../components/Counter';
 import MyDatePicker from '../../components/MyDatePicker';
 import BookingModal from '../../components/BookingModal';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function OtherVenueSpecific(){
     const { id } = useParams();
@@ -19,7 +19,6 @@ export default function OtherVenueSpecific(){
     const [numberOfGuests, setNumberOfGuests] = useState(0);
     const [reservationInfo, setReservationInfo] = useState({});
 
-    // Callback function to update the selected component states so we can use it in the booking form
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
@@ -30,33 +29,46 @@ export default function OtherVenueSpecific(){
 
     async function handleSubmit(event){
         event.preventDefault();
-        const startDate = new Date(selectedDate.from.year, selectedDate.from.month - 1, selectedDate.from.day + 1).toISOString();
-        const endDate = new Date(selectedDate.to.year, selectedDate.to.month - 1, selectedDate.to.day + 1).toISOString();
-        setReservationInfo({
+        const startDate = new Date(selectedDate.from.year, selectedDate.from.month - 1, selectedDate.from.day).toISOString();
+        const endDate = new Date(selectedDate.to.year, selectedDate.to.month - 1, selectedDate.to.day).toISOString();
+        
+        const newReservationInfo = {
             dateFrom: startDate,
             dateTo: endDate,
             guests: numberOfGuests,
             venueId: id,
-        })
+        }
 
-        const options = {
+        setReservationInfo(newReservationInfo);
+
+    }
+
+    useEffect(() => {
+        if (Object.keys(reservationInfo).length > 0) {
+          const options = {
             method: "POST",
             body: JSON.stringify(reservationInfo),
             headers: {
-                "Content-type": "application/json; charset=UTF-8",
-                "Authorization": `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`,
+              "Content-type": "application/json; charset=UTF-8",
+              "Authorization": `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`,
             }
-        }
-
-        try {
-            const response = await fetch(bookUrl, options);
-            if(response.ok){
-                window.location.replace('/');
+          };
+      
+          const makeBooking = async () => {
+            try {
+              const response = await fetch(bookUrl, options);
+              console.log(await response.json());
+              if (response.ok) {
+                window.location.replace(`/mybookings/${JSON.parse(localStorage.getItem('profileName'))}`);
+              }
+            } catch (error) {
+              console.log(error);
             }
-        } catch(error) {
-            console.log(error);
+          };
+      
+          makeBooking();
         }
-    }
+    }, [reservationInfo, bookUrl]);
 
     return (
         <Container>
