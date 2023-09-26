@@ -10,7 +10,7 @@ function LoginModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className='m-1 shadow'>Log in</Button>
+      <Button variant="primary" onClick={handleShow} className='m-1 custom-header-btn shadow'>Log in</Button>
 
       <Modal className='modal-dialog modal-dialog-centered fixed-top' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
