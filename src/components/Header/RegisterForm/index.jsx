@@ -65,7 +65,7 @@ function RegisterForm() {
             <Form.Label>Name *</Form.Label>
             <Form.Control 
                 type="text" 
-                placeholder="John Doe" 
+                placeholder="John" 
                 name="name" 
                 value={name}
                 onChange={changeHandler}
