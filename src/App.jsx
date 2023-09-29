@@ -8,6 +8,7 @@ import OtherVenueSpecific from './pages/OtherVenueSpecific';
 import MyBookingsPage from './pages/MyBookingsPage';
 import UserVenues from './pages/UserVenues';
 import Searchpage from './pages/Searchpage';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
                 <Route path='mybookings/:profilename' element={<MyBookingsPage />}/>
                 <Route path='uservenues/:profilename' element={<UserVenues/>} />
                 <Route path='searchpage/:searchValue' element={<Searchpage />} />
+                <Route path='*' element={<ErrorPage />} />
             </Route>
         </Routes>
     </>
