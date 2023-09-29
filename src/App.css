@@ -347,3 +347,7 @@ a {
 .error-message {
     color: red;
 }
+
+.bi-star-fill {
+    color: var(--main-green);
+}
